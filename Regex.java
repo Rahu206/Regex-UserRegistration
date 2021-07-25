@@ -1,0 +1,32 @@
+package com.regex;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Regex {
+	public static void main(String[] args) {
+		
+		
+		String regex_for_name = "^[a-zA-Z]{0,6}";
+		String regex_for_LastName =  "^[a-zA-Z]{0,10}";
+		String regex_for_Email = "^[a-zA-Z0-9+.-]+@[a-zA-Z0-9.]+$" ;
+		
+		Pattern pattern = Pattern.compile(regex_for_name);
+		Matcher matcher = pattern.matcher("Rahul");
+		
+		Pattern pattern1 = Pattern.compile(regex_for_LastName);
+		Matcher matcher1 = pattern1.matcher("Deshpande");
+		
+		Pattern pattern2 = Pattern.compile(regex_for_Email);
+		Matcher matcher2 = pattern2.matcher("abc.xyz@bl.co.in");
+		
+		System.out.println("FirstName Valid : " +matcher.matches());
+		System.out.println("LastName Valid : " +matcher1.matches());
+		System.out.println("Email Valid : " +matcher2.matches());
+		
+		
+		
+		}
+	
+
+}
